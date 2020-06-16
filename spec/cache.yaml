@@ -1,0 +1,171 @@
+---
+- :name: A
+  :version: 1.0.0
+  :authors:
+  - :name: A Team
+    :email: a@a.com
+  :is_local: true
+  :root_directory: "/Users/a/A"
+  :podspec_file: A.podspec
+  :license:
+    :type: Proprietary
+    :text: "© 2020 A, Inc."
+  :summary: Summary for A
+  :homepage: https://a.com
+  :uses_swift: true
+  :swift_versions:
+  - '5.0'
+  :platforms:
+  - :name: :ios
+    :version: '10.0'
+  :dependencies:
+  - B
+  - C
+  :source_files:
+  - Sources/A.swift
+- :name: B
+  :version: 3.20200605.22549
+  :authors:
+  - :name: B Team
+    :email: b@b.com
+  :is_local: false
+  :root_directory: "/Users/b/B"
+  :license:
+    :type: Proprietary
+    :text: "(c) 2020 B, Inc."
+  :summary: Summary for B
+  :homepage: https://b.com
+  :uses_swift: false
+  :platforms:
+  - :name: :ios
+    :version: '8.0'
+  :dependencies:
+  - H
+  - D
+  - E
+  :source_files:
+  - ios/B.framework/Headers/B.pbobjc.h
+- :name: C
+  :version: 1.0.0
+  :authors:
+  - :name: C Team
+    :email: c@c.com
+  :is_local: true
+  :root_directory: "/Users/c/C"
+  :podspec_file: C.podspec
+  :license:
+    :type: Proprietary
+    :text: "© 2020 C, Inc."
+  :summary: Summary for C
+  :homepage: https://c.com
+  :uses_swift: false
+  :readme_file: README.md
+  :platforms:
+  - :name: :ios
+    :version: '10.0'
+  :dependencies:
+  - F
+  :source_files:
+  - Sources/C.h
+  - Sources/C.m
+- :name: D
+  :version: 3.20200605.22549
+  :authors:
+  - :name: D Team
+    :email: d@d.com
+  :is_local: false
+  :root_directory: "/Users/d/D"
+  :license:
+    :type: Proprietary
+    :text: "(c) 2020 D, Inc."
+  :summary: Summary for D
+  :homepage: https://d.com
+  :uses_swift: false
+  :platforms:
+  - :name: :ios
+    :version: '8.0'
+  :dependencies:
+  - H
+  - G
+  :source_files:
+  - ios/D_objc.framework/Headers/D/D.pbobjc.h
+- :name: E
+  :version: 3.20200605.22549
+  :authors:
+  - :name: E Team
+    :email: e@e.com
+  :is_local: false
+  :root_directory: "/Users/e/E"
+  :license:
+    :type: Proprietary
+    :text: "(c) 2020 E, Inc."
+  :summary: Summary for E
+  :homepage: https://e.com
+  :uses_swift: false
+  :platforms:
+  - :name: :ios
+    :version: '8.0'
+  :dependencies:
+  - H
+  - G
+  :source_files:
+  - ios/E_objc.framework/Headers/E/E.pbobjc.h
+- :name: F
+  :version: 1.17.3
+  :authors:
+  - :name: F Team
+    :email: f@f.com
+  :is_local: false
+  :root_directory: "/Users/f/F"
+  :license:
+    :type: Proprietary
+    :text: "© 2020 F, Inc."
+  :summary: Summary for F
+  :homepage: https://f.com
+  :uses_swift: false
+  :platforms:
+  - :name: :ios
+    :version: '9.0'
+  :source_files:
+  - ios/F.framework/Headers/NSBundle+F.h
+- :name: G
+  :version: 3.20200605.22549
+  :authors:
+  - :name: G Team
+    :email: g@g.com
+  :is_local: false
+  :root_directory: "/Users/g/G"
+  :license:
+    :type: Proprietary
+    :text: "(c) 2020 G, Inc."
+  :summary: Summary for G
+  :homepage: https://g.com
+  :uses_swift: false
+  :platforms:
+  - :name: :ios
+    :version: '8.0'
+  :dependencies:
+  - H
+  :source_files:
+  - ios/F_objc.framework/Headers/G/G.pbobjc.h
+- :name: H
+  :version: 3.6.0
+  :authors:
+  - :name: H Team
+    :email: h@h.com
+  :is_local: false
+  :root_directory: "/Users/h/H"
+  :license:
+    :type: 3-Clause BSD License
+  :summary: Summary for H
+  :homepage: https://h.com
+  :uses_swift: false
+  :platforms:
+  - :name: :ios
+    :version: '7.0'
+  - :name: :osx
+    :version: '10.9'
+  :source_files:
+  - ios/H.framework/Headers/H1.pbobjc.h
+  - ios/H.framework/Headers/H2.pbobjc.h
+  
