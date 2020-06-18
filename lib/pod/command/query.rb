@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'cocoapods'
+require 'json'
 require 'yaml'
 
 module Pod
@@ -35,6 +36,7 @@ module Pod
           ['--case-insensitive', 'Don\'t consider case when matching strings'],
           ['--substring', 'Allow substring matching for string parameters'],
           ['--to-yaml=FILE', 'Output the results in YAML format with additional Podspec data (authors, source files, dependencies, etc.) to the given file'],
+          ['--to-json=FILE', 'Output the results in JSON format with additional Podspec data (authors, source files, dependencies, etc.) to the given file'],
           ['--cache=FILE', 'Load the sandbox data from the given YAML file (created previously with the --to-yaml parameter) instead of from the current sandbox instance']
         ].concat(super)
       end
@@ -53,6 +55,7 @@ module Pod
         @case_insensitive = argv.flag?('case-insensitive', false)
         @substring = argv.flag?('substring', false)
         @to_yaml = argv.option('to-yaml')
+        @to_json = argv.option('to-json')
         @cache = argv.option('cache')
       end
 
@@ -72,6 +75,7 @@ module Pod
         end
 
         File.open(@to_yaml, 'w') { |file| file.write(matching_targets.to_yaml) } if @to_yaml
+        File.open(@to_json, 'w') { |file| file.write(matching_targets.to_json) } if @to_json
 
         matching_targets.each { |target| UI.puts target[:name] }
       end
