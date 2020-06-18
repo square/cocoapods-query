@@ -67,3 +67,7 @@ For local development of this plugin, the simplest approach is to install it int
     gem 'cocoapods-query', path: "#{ENV['HOME']}/projects/cocoapods-query"
 
 You can then make changes to the code and they will be executed when using the `query` command from the app's directory.
+
+# Copyright
+
+Copyright 2020 Square, Inc.
