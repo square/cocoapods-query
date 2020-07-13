@@ -30,6 +30,7 @@ module Pod
           ['--author-name=NAME', 'Include pods having at least one author of the given name'],
           ['--summary=SUMMARY', 'Include pods whose summary matches the given string'],
           ['--description=DESCRIPTION', 'Include pods whose description matches the given string'],
+          ['--dependency=NAME', 'Include pods that have a direct dependency on the given pod'],
           ['--source-file=FILE', 'Include pods whose source list includes the given file name'],
           ['--swift', 'Only include pods that use Swift (--no-swift for only pods that do not)'],
           ['--local', 'Only include locally sourced pods (--no-local for only remote pods)'],
@@ -49,6 +50,7 @@ module Pod
         @author_name = argv.option('author-name')
         @summary = argv.option('summary')
         @description = argv.option('description')
+        @dependency = argv.option('dependency')
         @source_file = argv.option('source-file')
         @swift = argv.flag?('swift')
         @local = argv.flag?('local')
@@ -69,7 +71,8 @@ module Pod
             (@author_email.nil? || target[:authors].any? { |author| !author[:email].nil? && str_match(@author_email, author[:email]) }) &&
             (@summary.nil? || str_match(@summary, target[:summary])) &&
             (@description.nil? || str_match(@description, target[:description])) &&
-            (@source_file.nil? || target[:source_files].nil? || target[:source_files].any? { |s| str_match(@source_file, s) }) &&
+            (@dependency.nil? || (!target[:dependencies].nil? && target[:dependencies].any? { |s| str_match(@dependency, s) })) &&
+            (@source_file.nil? || (!target[:source_files].nil? && target[:source_files].any? { |s| str_match(@source_file, s) })) &&
             (@swift.nil? || @swift == target[:uses_swift]) &&
             (@local.nil? || @local == target[:local])
         end

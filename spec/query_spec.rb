@@ -14,6 +14,15 @@ describe Pod::Command::Query do
     expect(pods[0][:name]).to eq 'B'
   end
 
+  it 'filters by dependency' do
+    pods = run(['--dependency=H'])
+    expect(pods.length).to eq 4
+    expect(pods[0][:name]).to eq 'B'
+    expect(pods[1][:name]).to eq 'D'
+    expect(pods[2][:name]).to eq 'E'
+    expect(pods[3][:name]).to eq 'G'
+  end
+
   it 'finds source files by case insensitive substring' do
     pods = run(['--source-file=e.pbobjc.h', '--substring', '--case-insensitive'])
     expect(pods.length).to eq 1
