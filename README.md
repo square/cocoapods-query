@@ -33,19 +33,19 @@ By default, the command lists all pods in the sandbox. This list can be filtered
 
 What pods contain the string "testing" in their name?
 
-    $ pod query --name testing --substring --case-insensitive
+    $ pod query --name=testing --substring --case-insensitive
 
 What pods have a direct dependency on Foo?
 
-    $ pod query --dependency Foo
+    $ pod query --dependency=Foo
 
 What pods were created by hacker@example.com?
 
-    $ pod query --author-email hacker@example.com
+    $ pod query --author-email=hacker@example.com
 
 What pods contain a source file named `HelloWorld.swift`?
 
-    $ pod query --source-file HelloWorld.swift --substring
+    $ pod query --source-file=HelloWorld.swift --substring
 
 # Caching
 
